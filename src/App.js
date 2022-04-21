@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { useDispatch } from 'react-redux';
+import * as contentActions from './store/actions/charactersActions';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => dispatch(contentActions.getCharactersList({ payload: "hi"}))}>click</button>
       </header>
     </div>
   );
