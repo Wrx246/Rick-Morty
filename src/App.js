@@ -1,29 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import { useDispatch } from 'react-redux';
-import * as contentActions from './store/actions/charactersActions';
+import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/header/Header';
+import ContentPage from './components/content/ContentPage'
+import CharactersPage from './components/content/characters/CharactersPage'
+import LocationPage from './components/content/Location/LocationPage'
+import EpisodesPage from './components/content/Episodes/EpisodesPage'
 
 const App = () => {
-  const dispatch = useDispatch();
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button onClick={() => dispatch(contentActions.getCharactersList({ payload: "hi"}))}>click</button>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route exact path='/' element={<ContentPage />} />
+        <Route path='/characters' element={<CharactersPage />} />
+        <Route path='/location' element={<LocationPage />} />
+        <Route path='/episodes' element={<EpisodesPage />} />
+      </Routes>
+    </>
   );
 }
 
