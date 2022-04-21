@@ -9,6 +9,23 @@ const CharactersPage = () => {
             <MyHeader title={'Characters'} />
             <div className={st.characters__cards}>
                 <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
+                <MyCard />
             </div>
         </div>
     )

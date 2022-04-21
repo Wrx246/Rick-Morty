@@ -1,6 +1,18 @@
-.characters {
-    background: url(../../../assets/images/characters.png) no-repeat center center fixed;
+body {
+    background: url(../../../assets/images/characters.png) no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
+}
+
+.characters {
     min-height: 100vh;
     display: grid;
+}
+
+.characters__cards {
+    display: grid;
+    max-width: 70%;
+    max-height: 350px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
