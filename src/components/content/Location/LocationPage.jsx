@@ -1,9 +1,12 @@
 import React from "react";
+import st from './LocationPage.module.scss';
 
 
 const LocationPage = () => {
     return(
-        <div>LocationPage</div>
+        <div className={st.location}>
+            LocationPage
+            </div>
     )
 }
 

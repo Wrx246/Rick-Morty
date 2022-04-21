@@ -1,9 +1,11 @@
 import React from "react";
-
+import st from './EpisodesPage.module.scss';
 
 const EpisodesPage = () => {
-    return(
-        <div>EpisodesPage</div>
+    return (
+        <div className={st.episodes}>
+            EpisodesPage
+        </div>
     )
 }
 
