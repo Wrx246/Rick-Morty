@@ -1,0 +1,14 @@
+.myinput {
+    min-width: 350px;
+    height: 30px;
+    background-color: #282c34;
+    border: #474849 0px solid;
+    font-size: 18px;
+    color: white;
+    margin: 20px;
+    &:focus {
+        background-color: #ffffff;
+        outline: none;
+        color: #282c34;
+    }
+}

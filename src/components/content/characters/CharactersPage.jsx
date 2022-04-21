@@ -1,12 +1,15 @@
 import React from "react";
 import MyCard from "../../../UI/myCard/MyCard";
+import MyHeader from "../../../UI/myHeader/MyHeader";
 import st from './CharactersPage.module.scss';
 
 const CharactersPage = () => {
     return (
         <div className={st.characters}>
-            characters
-            <MyCard />
+            <MyHeader title={'Characters'} />
+            <div className={st.characters__cards}>
+                <MyCard />
+            </div>
         </div>
     )
 }
