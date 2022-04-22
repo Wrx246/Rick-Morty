@@ -18,13 +18,6 @@ const ContentPage = () => {
         dispatch(contentActions.getCharactersList())
     }, [])
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(contentActions.getFilterCharacter({
-            search
-        }));
-        setSearch('');
-    }
 
     if(filterCharacter.length) {
         return (

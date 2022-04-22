@@ -20,3 +20,13 @@ export const {
     getFilterCharacterSuccess,
     getFilterCharacterFailed,
 } = createActions(GET_FILTER_CHARACTER)
+
+export const GET_DETAILS_CHARACTER = 'GET_DETAILS_CHARACTER';
+
+export const {
+    GET_DETAILS_CHARACTER_SUCCESS,
+    GET_DETAILS_CHARACTER_FAILED,
+    getDetailsCharacter,
+    getDetailsCharacterSuccess,
+    getDetailsCharacterFailed,
+} = createActions(GET_DETAILS_CHARACTER)

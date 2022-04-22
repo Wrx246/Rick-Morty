@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { getAllCharacters, getCharactersFilter } from '../API/getCharacters';
+import { getAllCharacters, getCharacterDetails, getCharactersFilter } from '../API/getCharacters';
 import * as contentActions from '../store/actions/charactersActions';
 
 
@@ -23,8 +23,21 @@ function* getFilterCharactersWorker(action) {
     }
 }
 
+function* getDetailsCharacterWorker(action) {
+    const { id } = action.payload
+
+    try {
+        const response = yield call(getCharacterDetails, id)
+        yield put(contentActions.getDetailsCharacterSuccess(response.data))
+    } catch (e) {
+        yield console.log(e)
+    }
+}
+
+
 
 export function* watcherSaga() {
     yield takeEvery(contentActions.GET_CHARACTERS_LIST, getAllCharactersWorker)
     yield takeEvery(contentActions.GET_FILTER_CHARACTER, getFilterCharactersWorker)
+    yield takeEvery(contentActions.GET_DETAILS_CHARACTER, getDetailsCharacterWorker)
 }

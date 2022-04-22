@@ -1,0 +1,34 @@
+.details {
+    background: url(../../../assets/images/home.png) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: grid;
+}
+
+
+.details__body {
+    display: flex;
+    margin-top: 150px;
+    max-width: 1000px;
+    max-height: 500px;
+    background-color: #282c34;
+    border-radius: 15px;
+    img {
+        width: 70%;
+        height: 100%;
+        padding: 20px;
+    }
+}
+
+.details__title {
+    width: 550px;
+    color: white;
+    h2 {
+        max-width: 450px;
+        padding: 20px;
+        font-size: 35px;
+    }
+    h3 {
+        padding: 10px 0px 0px 20px;
+    }
+}

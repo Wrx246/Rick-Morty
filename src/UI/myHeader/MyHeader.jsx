@@ -1,5 +1,5 @@
 import React from "react";
-import MyInput from "../myImput/MyInput";
+import MyInput from "../myInput/MyInput";
 import st from './MyHeader.module.scss';
 
 const MyHeader = ({title, search, setSearch}) => {
