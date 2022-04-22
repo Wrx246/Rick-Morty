@@ -1,5 +1,18 @@
-.content {
+body {
     background: url(../../assets/images/home.png) no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
+}
+
+.content {
     min-height: 100vh;
+    display: grid;
+}
+
+.content__cards {
+    display: grid;
+    max-width: 70%;
+    max-height: 350px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }

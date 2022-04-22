@@ -12,17 +12,19 @@ const CharactersPage = () => {
     const filterCharacter = useSelector(getFilterCharacterSelector);
     const [search, setSearch] = useState('');
 
-    // useEffect(() => {
+    
 
-    // }, [filterCharacter])
-
+    useEffect(() => {
+        dispatch(contentActions.getCharactersList())
+      }, [])
+ 
     if (filterCharacter.length === 0) {
         return (
             <div className={st.characters}>
                 <MyHeader search={search} setSearch={setSearch} title={'Characters'} />
                 <div className={st.characters__cards}>
-                    {characters?.map((characters) => {
-                        return (
+                    {characters?.map((characters) => 
+                         (
                             <MyCard
                                 id={characters.id}
                                 name={characters.name}
@@ -30,7 +32,7 @@ const CharactersPage = () => {
                                 gender={characters.gender}
                                 image={characters.image} />
                         )
-                    })}
+                    )}
                 </div>
             </div>
         )

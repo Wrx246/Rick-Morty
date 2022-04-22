@@ -3,6 +3,7 @@ import * as contentActions from '../actions/charactersActions';
 
 const defaultState = {
     characters: [],
+    search: [],
     filter: []
 }
 
@@ -14,7 +15,6 @@ const charactersReducer = (state = defaultState, { type, payload }) => {
 
         case contentActions.GET_FILTER_CHARACTER:
         case contentActions.GET_FILTER_CHARACTER_SUCCESS: return { ...state, filter: payload }
-        case contentActions.GET_FILTER: return state.filter
         default:
             return state
     }

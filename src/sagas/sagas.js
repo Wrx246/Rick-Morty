@@ -23,6 +23,7 @@ function* getFilterCharactersWorker(action) {
     }
 }
 
+
 export function* watcherSaga() {
     yield takeEvery(contentActions.GET_CHARACTERS_LIST, getAllCharactersWorker)
     yield takeEvery(contentActions.GET_FILTER_CHARACTER, getFilterCharactersWorker)

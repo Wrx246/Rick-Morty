@@ -7,7 +7,7 @@ import { watcherSaga } from "../sagas/sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 const reducers = combineReducers({
-    charactersReducer: charactersReducer,
+    charactersReducer: charactersReducer, 
 })
 
 const store = createStore( reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));

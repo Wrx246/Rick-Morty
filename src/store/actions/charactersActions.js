@@ -20,9 +20,3 @@ export const {
     getFilterCharacterSuccess,
     getFilterCharacterFailed,
 } = createActions(GET_FILTER_CHARACTER)
-
-export const GET_FILTER = 'GET_FILTER';
-
-export const {
-    getFilter,
-} = createActions(GET_FILTER)

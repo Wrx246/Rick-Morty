@@ -9,7 +9,7 @@ const LocationPage = () => {
         <div className={st.location}>
             <MyHeader title={'Locations'} />
             <div className={st.location__cards}>
-                <MyCard />
+                    <MyCard />
             </div>
         </div>
     )
