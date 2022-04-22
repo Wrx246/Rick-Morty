@@ -5,8 +5,17 @@ import ContentPage from './components/content/ContentPage'
 import CharactersPage from './components/content/characters/CharactersPage'
 import LocationPage from './components/content/Location/LocationPage'
 import EpisodesPage from './components/content/Episodes/EpisodesPage'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import * as contentActions from './store/actions/charactersActions';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(contentActions.getCharactersList())
+  }, [])
+
 
   return (
     <>
