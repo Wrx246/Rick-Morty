@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import LoginButton from "../../../UI/buttons/loginButton/LoginButton";
+import * as contentActions from '../../../store/actions/charactersActions';
 import st from './LoginPage.module.scss';
 
 
 const LoginPage = () => {
+    const dispatch = useDispatch();
     const [confirmUser, setConfirmUser] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
     const [confirmLogin, setConfirmLogin] = useState(false);
@@ -22,6 +25,7 @@ const LoginPage = () => {
             setConfirmLogin(true);
             localStorage.setItem('ConfirmedLogin', JSON.stringify(true))
         }
+        dispatch(contentActions.setIsLogin(true))
     }
 
     if (confirmLogin === true) {

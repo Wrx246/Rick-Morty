@@ -10,33 +10,47 @@ const CharactersPage = () => {
     const favList = useSelector(getFavoriteCharacterSelector)
 
     const favoriteList = JSON.parse(localStorage.getItem('FavoriteList'));
+    const login = JSON.parse(localStorage.getItem('ConfirmedLogin'))
 
     useEffect(() => {
         dispatch(contentActions.setFavoriteCharacter(favoriteList))
     }, [])
 
-
-    if (favList.length) {
+    if (login === true) {
+        if (favList.length) {
+            return (
+                <div className={st.characters}>
+                    <div className={st.characters__header}>
+                        <h1>My favorite characters</h1>
+                        <hr />
+                    </div>
+                    <div className={st.characters__cards}>
+                        {favList.map((favList) => (
+                            <MyCard
+                                id={favList.id}
+                                name={favList.name}
+                                status={favList.status}
+                                gender={favList.gender}
+                                image={favList.image}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )
+        }
+    } else {
         return (
             <div className={st.characters}>
                 <div className={st.characters__header}>
                     <h1>My favorite characters</h1>
                     <hr />
-                </div>
-                <div className={st.characters__cards}>
-                    {favList.map((favList) => (
-                        <MyCard
-                            id={favList.id}
-                            name={favList.name}
-                            status={favList.status}
-                            gender={favList.gender}
-                            image={favList.image}
-                        />
-                    ))}
+                    <h2>You must be logged in to see the list of characters</h2>
                 </div>
             </div>
         )
     }
+
+    
 }
 
 export default CharactersPage;

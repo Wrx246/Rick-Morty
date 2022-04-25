@@ -38,3 +38,9 @@ export const {
     setFavoriteCharacter,
     getFavoriteCharacters,
 } = createActions(SET_FAVORITE_CHARACTER)
+
+export const SET_IS_LOGIN = 'SET_IS_LOGIN';
+
+export const {
+    setIsLogin,
+} = createActions(SET_IS_LOGIN)

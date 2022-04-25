@@ -12,17 +12,28 @@ const CharacterDetails = () => {
     const { id } = useParams();
 
     const favoriteList = JSON.parse(localStorage.getItem('FavoriteList'))
+    const login = JSON.parse(localStorage.getItem('ConfirmedLogin'))
 
     const handleClick = (e) => {
         e.preventDefault();
-        favoriteList.push(details)
-        localStorage.setItem('FavoriteList', JSON.stringify(favoriteList))
+        if (login === true) {
+            favoriteList.push(details)
+            localStorage.setItem('FavoriteList', JSON.stringify(favoriteList))
+        } else {
+            alert('You need login for this!')
+        }
+
     }
 
     const handleRemove = (e) => {
         e.preventDefault();
-        let filtered = favoriteList.filter((el) => el.id !== details.id)
-        localStorage.setItem('FavoriteList', JSON.stringify(filtered))
+        if (login === true) {
+            let filtered = favoriteList.filter((el) => el.id !== details.id)
+            localStorage.setItem('FavoriteList', JSON.stringify(filtered))
+        } else {
+            alert('You need login for this!')
+        }
+        
     }
 
     useEffect(() => {

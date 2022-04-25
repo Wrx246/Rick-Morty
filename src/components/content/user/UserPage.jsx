@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ReactFileReader from "react-file-reader";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import * as contentActions from '../../../store/actions/charactersActions';
 import st from './UserPage.module.scss';
 
 
 const UserPage = () => {
+    const dispatch = useDispatch();
     const [url, setUrl] = useState('https://i.imgur.com/ndu6pfe.png');
     const navigate = useNavigate();
 
@@ -21,6 +24,7 @@ const UserPage = () => {
         localStorage.setItem('ConfirmedLogin', JSON.stringify(false))
         let path = `/login`;
         navigate(path);
+        dispatch(contentActions.setIsLogin(false))
     }
 
     return (
