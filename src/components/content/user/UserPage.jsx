@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactFileReader from "react-file-reader";
 import { useNavigate } from "react-router-dom";
-import LoginButton from "../../../UI/buttons/loginButton/LoginButton";
 import st from './UserPage.module.scss';
 
 

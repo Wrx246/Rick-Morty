@@ -1,7 +1,7 @@
 import { createActions } from "./actionCreator";
 
 export const DELETE_CHARACTERS = 'DELETE_CHARACTERS';
-export const GET_CHARACTERS_LIST = 'GET_CHARACTERS_LIST'
+export const GET_CHARACTERS_LIST = 'GET_CHARACTERS_LIST';
 
 export const {
     GET_CHARACTERS_LIST_SUCCESS,
@@ -30,3 +30,11 @@ export const {
     getDetailsCharacterSuccess,
     getDetailsCharacterFailed,
 } = createActions(GET_DETAILS_CHARACTER)
+
+export const SET_FAVORITE_CHARACTER = 'SET_FAVORITE_CHARACTER';
+
+export const {
+    GET_FAVORITE_CHARACTERS,
+    setFavoriteCharacter,
+    getFavoriteCharacters,
+} = createActions(SET_FAVORITE_CHARACTER)

@@ -14,6 +14,7 @@ const RegButton = (children) => {
         setPassword } = children
 
     const handleSubmit = (e) => {
+        localStorage.setItem('FavoriteList', '[]')
         e.preventDefault();
         setRegistration({username, email, password})
         setEmail('');

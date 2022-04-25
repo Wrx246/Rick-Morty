@@ -8,7 +8,7 @@
     min-height: 350px;
     border-radius: 5%;
     transition: all 0.3s;
-
+    
     &:hover {
         transform: scale(1.1);
         transition: all 0.3s;
@@ -29,4 +29,8 @@
     h5 {
         font-weight: normal;
     }
+}
+
+.card__link {
+    text-decoration: none;
 }

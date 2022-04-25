@@ -5,7 +5,7 @@ import st from './MyCard.module.scss';
 const MyCard = ({id, name, status, gender, image}) => {
 
     return (
-        <Link to={`/${id}`}>
+        <Link className={st.card__link} to={`/${id}`}>
         <div className={st.card__wrapper} key={id}>
             <img src={image} alt='character' />
             <div className={st.card__description}>

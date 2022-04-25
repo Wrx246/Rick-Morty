@@ -4,7 +4,8 @@ import * as contentActions from '../actions/charactersActions';
 const defaultState = {
     characters: [],
     details: [],
-    filter: []
+    filter: [],
+    favorite: []
 }
 
 
@@ -18,6 +19,8 @@ const charactersReducer = (state = defaultState, { type, payload }) => {
 
         case contentActions.GET_DETAILS_CHARACTER:
         case contentActions.GET_DETAILS_CHARACTER_SUCCESS: return { ...state, details: payload }
+
+        case contentActions.SET_FAVORITE_CHARACTER: return { ...state, favorite: payload}
         default:
             return state
     }
