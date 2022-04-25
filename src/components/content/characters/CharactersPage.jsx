@@ -37,6 +37,16 @@ const CharactersPage = () => {
                     </div>
                 </div>
             )
+        } else {
+            return (
+                <div className={st.characters}>
+                    <div className={st.characters__header}>
+                        <h1>My favorite characters</h1>
+                        <hr />
+                        <h2>You have 0 favorite character</h2>
+                    </div>
+                </div>
+            )
         }
     } else {
         return (
