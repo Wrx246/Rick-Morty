@@ -1,4 +1,4 @@
-.login {
+.registration {
     background: url(../../../assets/images/location.png) no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
@@ -6,7 +6,7 @@
     display: grid;
 }
 
-.login__header {
+.registration__header {
     margin-top: 100px;
 
     h1 {
@@ -17,7 +17,7 @@
     }
 }
 
-.login__form {
+.registration__form {
     margin-top: 50px;
     width: 400px;
     height: 500px;
@@ -58,19 +58,5 @@
         background-color: #ffffff;
         outline: none;
         color: #282c34;
-    }
-}
-
-.login__link {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    &:hover {
-        color: #e1bf1f;
-        transition: .3s;
-    }
-    &:active {
-        color: #8d7716;
     }
 }

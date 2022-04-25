@@ -1,0 +1,17 @@
+.RegButton {
+    width: 270px;
+    height: 50px;
+    background-color: #f5c518;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-left: 18%;
+    font-size: 25px;
+    color: white;
+    &:hover {
+        background-color: #f3d25c;
+    }
+    &:active {
+        background-color: #cca106;
+    }
+}

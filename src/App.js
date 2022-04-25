@@ -6,6 +6,8 @@ import CharactersPage from './components/content/characters/CharactersPage'
 import LoginPage from './components/content/login/LoginPage'
 import AboutPage from './components/content/about/AboutPage'
 import CharacterDetails from './components/content/characterDetails/CharacterDetails';
+import RegistrationPage from './components/content/registration/RegistrationPage';
+import UserPage from './components/content/user/UserPage';
 
 const App = () => {
   return (
@@ -14,7 +16,8 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<ContentPage />} />
         <Route path='/characters' element={<CharactersPage />} />
-        <Route path='/login' element={<LoginPage />} />
+        <Route path='/login' element={<RegistrationPage />} />
+        <Route path='/user' element={<UserPage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/:id' element={<CharacterDetails />} />
       </Routes>
