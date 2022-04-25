@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "../../../UI/buttons/loginButton/LoginButton";
-import UserPage from "../user/UserPage";
 import st from './LoginPage.module.scss';
 
 
@@ -21,6 +20,7 @@ const LoginPage = () => {
             setConfirmLogin(false)
         } else {
             setConfirmLogin(true);
+            localStorage.setItem('ConfirmedLogin', JSON.stringify(true))
         }
     }
 

@@ -1,4 +1,4 @@
-.logout {
+.user {
     background: url(../../../assets/images/location.png) no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
@@ -6,7 +6,7 @@
     display: grid;
 }
 
-.logout__header {
+.user__header {
     margin-top: 100px;
 
     h1 {
@@ -17,9 +17,9 @@
     }
 }
 
-.logout__form {
+.user__form {
     margin-top: 50px;
-    width: 400px;
+    width: 1000px;
     height: 500px;
     background-color: #282c34;
     border-radius: 15px;
@@ -37,3 +37,104 @@
     }
 }
 
+.avatarBlock {
+    max-width: 250px;
+    align-items: center;
+    text-align: center;
+}
+
+.avatarInput {
+    margin-bottom: 20px;
+    position: relative;
+    align-self: center;
+
+    img {
+        width: 186px;
+        height: 186px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .circle {
+        width: 186px;
+        height: 186px;
+        border-radius: 50%;
+    }
+
+    label {
+        right: 23em !important;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background: #312e38;
+        border-radius: 50%;
+        right: 0;
+        bottom: 0;
+        border: 0;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            display: none;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+            color: #f4ede8;
+        }
+
+        &:hover {
+            background: blue;
+        }
+    }
+}
+
+.avatarButton {
+    width: 80px;
+    background-color: #e1bf1f;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #f3d25c;
+        transition: .3s;
+    }
+    &:active {
+        background-color: #cca106;
+        transition: .3s;
+    }
+}
+
+.account {
+    display: flex;
+}
+
+.accountBlock {
+
+    h3 {
+        color: white;
+        font-size: 25px;
+        padding: 10px;
+    }
+}
+
+.accountBlock__button {
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: #e1bf1f;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #f3d25c;
+        transition: .3s;
+    }
+    &:active {
+        background-color: #cca106;
+        transition: .3s;
+    }
+}
