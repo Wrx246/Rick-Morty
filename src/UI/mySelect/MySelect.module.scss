@@ -1,0 +1,22 @@
+.select__wrapper {
+    // display: flex;
+    margin: 15px;
+    max-width: 150px;
+    p {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+.select__body {
+    min-width: 150px;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-family: Arial;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+}

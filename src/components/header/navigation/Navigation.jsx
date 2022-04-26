@@ -13,10 +13,10 @@ const Navigation = () => {
     const UserStorage = JSON.parse(localStorage.getItem('Username'));
 
     useEffect(() => {
-        if (isLogin === true && login === true) {
+        if (isLogin === true || login === true) {
             setUsername(UserStorage)
             setLogined(true)
-        } else if (isLogin === false && login === false) {
+        } else if (isLogin === false || login === false) {
             setLogined(false)
         }
     }, [isLogin, login, UserStorage])

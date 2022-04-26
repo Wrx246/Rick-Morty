@@ -5,7 +5,7 @@ const defaultState = {
     characters: [],
     details: [],
     filter: [],
-    favorite: []
+    favorite: [],
 }
 
 
@@ -20,7 +20,10 @@ const charactersReducer = (state = defaultState, { type, payload }) => {
         case contentActions.GET_DETAILS_CHARACTER:
         case contentActions.GET_DETAILS_CHARACTER_SUCCESS: return { ...state, details: payload }
 
-        case contentActions.SET_FAVORITE_CHARACTER: return { ...state, favorite: payload}
+        case contentActions.SET_FAVORITE_CHARACTER: return { ...state, favorite: payload }
+
+        case contentActions.GET_SORT_CHARACTERS:
+            return { ...state, favorite: state.favorite.slice().sort((a, b) => a[payload].toString().localeCompare(b[payload])) };
         default:
             return state
     }
