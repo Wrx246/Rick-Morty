@@ -19,7 +19,7 @@
 
 .user__form {
     margin-top: 50px;
-    width: 1000px;
+    min-width: 1000px;
     height: 500px;
     background-color: #282c34;
     border-radius: 15px;
@@ -136,5 +136,155 @@
     &:active {
         background-color: #cca106;
         transition: .3s;
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 640px) {
+    .user__header {
+        margin-top: 50px;
+    }
+    
+    .user__form {
+        margin-top: 50px;
+        min-width: 500px;
+        height: 400px;
+        background-color: #282c34;
+        border-radius: 15px;
+    
+        h2 {
+            font-size: 20px;
+            padding: 10px;
+        }
+    }
+    
+    .avatarInput {
+        margin-bottom: 10px;
+    
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    
+        .circle {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .accountBlock {
+    
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    .buttonBlock {
+        display: flex;
+    }
+    
+    .accountBlock__button {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 639px) and (min-width: 360px) {
+    .user__header {
+        margin-top: 50px;
+    }
+    
+    .user__form {
+        margin-top: 50px;
+        min-width: 360px;
+        height: 400px;
+        background-color: #282c34;
+        border-radius: 15px;
+    
+        h2 {
+            font-size: 20px;
+            padding: 10px;
+        }
+    }
+    
+    .avatarInput {
+        margin-bottom: 10px;
+    
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    
+        .circle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .accountBlock {
+    
+        h3 {
+            font-size: 15px;
+        }
+    }
+
+    .buttonBlock {
+        display: flex;
+    }
+    
+    .accountBlock__button {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .user__header {
+        margin-top: 30px;
+    }
+    
+    .user__form {
+        margin-top: 50px;
+        min-width: 150px;
+        height: 200px;
+        background-color: #282c34;
+        border-radius: 15px;
+    
+        h2 {
+            font-size: 20px;
+            padding: 10px;
+        }
+    }
+    
+    .avatarInput {
+        margin-bottom: 10px;
+    
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    
+        .circle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .avatarButton {
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .accountBlock {
+    
+        h3 {
+            font-size: 15px;
+        }
+    }
+
+    .buttonBlock {
+        display: flex;
+    }
+    
+    .accountBlock__button {
+        width: 80px;
+        font-size: 15px;
     }
 }

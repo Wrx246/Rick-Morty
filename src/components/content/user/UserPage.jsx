@@ -48,8 +48,10 @@ const UserPage = () => {
                         <div className={st.accountBlock}>
                             <h3>Username: {UserStorage}</h3>
                             <h3>Email: {EmailStorage}</h3>
+                            <div className={st.buttonBlock}>
                             <button type="button" className={st.accountBlock__button}>Change password</button>
                             <button type="button" onClick={onHandleLogout} className={st.accountBlock__button}>Logout</button>
+                            </div>
                         </div>
                     </div>
                 </div>

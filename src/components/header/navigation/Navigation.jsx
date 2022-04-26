@@ -21,7 +21,7 @@ const Navigation = () => {
         }
     }, [isLogin, login, UserStorage])
 
-    
+
 
     if (logined === true && UserStorage) {
         return (
@@ -41,7 +41,7 @@ const Navigation = () => {
                 <Link to='/registration' className={st.navigation__link}>Sign Up</Link>
             </div>
         )
-    } else if(logined === false) {
+    } else if (logined === false) {
         return (
             <div className={st.navigation}>
                 <Link to='/' className={st.navigation__link}>Home</Link>

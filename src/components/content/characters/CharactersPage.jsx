@@ -41,7 +41,7 @@ const CharactersPage = () => {
                                     { value: 'status', name: 'Status' },
                                     { value: 'gender', name: 'Gender' }
                                 ]} />
-                            <MyCheckbox />
+                            {/* <MyCheckbox /> */}
                         </div>
                     </div>
                     <div className={st.characters__cards}>

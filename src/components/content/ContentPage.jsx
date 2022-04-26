@@ -6,26 +6,22 @@ import st from './ContentPage.module.scss';
 import * as contentActions from '../../store/actions/charactersActions';
 import MyHeader from "../../UI/myHeader/MyHeader";
 
-
 const ContentPage = () => {
     const dispatch = useDispatch();
     const characters = useSelector(getCharactersListSelector);
     const filterCharacter = useSelector(getFilterCharacterSelector);
     const [search, setSearch] = useState('');
 
-
     useEffect(() => {
         dispatch(contentActions.getCharactersList())
     }, [])
 
-
-    if(filterCharacter.length) {
+    if (filterCharacter.length) {
         return (
             <div className={st.content}>
                 <MyHeader search={search} setSearch={setSearch} title={'Rick and Morty'} />
                 <div className={st.content__cards}>
-                    {filterCharacter?.map((filterCharacter) =>
-                    (
+                    {filterCharacter?.map((filterCharacter) => (
                         <MyCard
                             id={filterCharacter.id}
                             name={filterCharacter.name}
@@ -42,8 +38,7 @@ const ContentPage = () => {
             <div className={st.content}>
                 <MyHeader search={search} setSearch={setSearch} title={'Rick and Morty'} />
                 <div className={st.content__cards}>
-                    {characters?.map((characters) =>
-                    (
+                    {characters?.map((characters) => (
                         <MyCard
                             id={characters.id}
                             name={characters.name}
@@ -57,7 +52,7 @@ const ContentPage = () => {
         )
     }
 
-    
+
 }
 
 export default ContentPage;
