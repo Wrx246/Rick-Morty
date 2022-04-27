@@ -38,7 +38,7 @@ const UserPage = () => {
     const onHandleSave = (e) => {
         e.preventDefault();
         if (!editValue) {
-            alert("Enter password!")
+            setOnEdit(false);
         } else if (editValue) {
             localStorage.setItem('Password', JSON.stringify(editValue));
             setOnEdit(false);
