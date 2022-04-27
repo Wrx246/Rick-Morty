@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactFileReader from "react-file-reader";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import * as contentActions from '../../../store/actions/charactersActions';
+import * as authActions from '../../../store/actions/authAcitons';
 import st from './UserPage.module.scss';
 
 
@@ -27,7 +27,7 @@ const UserPage = () => {
         localStorage.setItem('ConfirmedLogin', JSON.stringify(false))
         let path = `/login`;
         navigate(path);
-        dispatch(contentActions.setIsLogin(false))
+        dispatch(authActions.setIsLogin(false))
     }
 
     const onHandlePassword = (e) => {

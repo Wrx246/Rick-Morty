@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getIsLoginSelector } from "../../../selectors/charactersSelector";
+import { getIsLoginSelector, getIsRegistratedSelector } from "../../../selectors/charactersSelector";
 import st from './Navigation.module.scss'
 
 const Navigation = () => {
     const isLogin = useSelector(getIsLoginSelector)
-    const [username, setUsername] = useState('');
+    const isRegistrated = useSelector(getIsRegistratedSelector)
     const [logined, setLogined] = useState(false);
 
     const login = JSON.parse(localStorage.getItem('ConfirmedLogin'))
@@ -14,9 +14,8 @@ const Navigation = () => {
 
     useEffect(() => {
         if (isLogin === true || login === true) {
-            setUsername(UserStorage)
             setLogined(true)
-        } else if (isLogin === false || login === false) {
+        } else if (isLogin === false) {
             setLogined(false)
         }
     }, [isLogin, login, UserStorage])
@@ -29,7 +28,7 @@ const Navigation = () => {
                 <Link to='/' className={st.navigation__link}>Home</Link>
                 <Link to='/characters' className={st.navigation__link}>My characters</Link>
                 <Link to='/about' className={st.navigation__link}>About</Link>
-                <Link to='/user' className={st.navigation__link}>{username}</Link>
+                <Link to='/user' className={st.navigation__link}>{UserStorage}</Link>
             </div>
         )
     } else if (!UserStorage) {
@@ -41,7 +40,7 @@ const Navigation = () => {
                 <Link to='/registration' className={st.navigation__link}>Sign Up</Link>
             </div>
         )
-    } else if (logined === false) {
+    } else if (isRegistrated === true || UserStorage) {
         return (
             <div className={st.navigation}>
                 <Link to='/' className={st.navigation__link}>Home</Link>

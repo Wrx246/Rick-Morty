@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import LoginButton from "../../../UI/buttons/loginButton/LoginButton";
-import * as contentActions from '../../../store/actions/charactersActions';
+import * as authActions from '../../../store/actions/authAcitons';
 import st from './LoginPage.module.scss';
+
 
 
 const LoginPage = () => {
@@ -29,7 +30,7 @@ const LoginPage = () => {
         } else if (confirmUser === UserStorage && confirmPass === PassStorage) {
             setConfirmLogin(true);
             localStorage.setItem('ConfirmedLogin', JSON.stringify(true))
-            dispatch(contentActions.setIsLogin(true))
+            dispatch(authActions.setIsLogin(true))
         }
         
     }

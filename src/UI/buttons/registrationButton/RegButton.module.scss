@@ -5,7 +5,7 @@
     border: none;
     cursor: pointer;
     border-radius: 15px;
-    margin-left: 18%;
+    margin-top: 10px;
     font-size: 25px;
     color: white;
     &:hover {
@@ -19,6 +19,5 @@
 @media screen and (max-width: 400px) {
     .RegButton {
         width: 250px;
-        margin-left: 9%;
     }
 }

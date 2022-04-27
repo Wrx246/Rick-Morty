@@ -39,11 +39,7 @@ export const {
     getFavoriteCharacters,
 } = createActions(SET_FAVORITE_CHARACTER)
 
-export const SET_IS_LOGIN = 'SET_IS_LOGIN';
 
-export const {
-    setIsLogin,
-} = createActions(SET_IS_LOGIN)
 
 export const GET_SORT_CHARACTERS = 'GET_SORT_CHARACTERS';
 
