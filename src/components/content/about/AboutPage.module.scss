@@ -1,7 +1,7 @@
 .about {
-    background: url(../../../assets/images/episodes.png) no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
+    // background: url(../../../assets/images/episodes.png) no-repeat center center fixed;
+    // background-size: cover;
+    // min-height: 100vh;
     display: grid;
 }
 
@@ -25,5 +25,17 @@
         padding: 20px;
         font-size: 25px;
         color: aliceblue;
+    }
+}
+
+@media screen and (max-width: 639px) and (min-width: 360px) {
+    .about__body {
+        max-height: 800px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .about__body {
+        max-height: 1000px;
     }
 }
