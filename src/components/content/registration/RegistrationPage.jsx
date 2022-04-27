@@ -8,20 +8,20 @@ const RegistrationPage = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [login, setLogin] = useState(true);
+    const [login, setLogin] = useState(false);
 
     const userCheck = localStorage.getItem('Username')
     const passCheck = localStorage.getItem('Password')
 
     useEffect(() => {
         if (userCheck && passCheck) {
-            setLogin(false)
-        } else if (!userCheck && !passCheck) {
             setLogin(true)
+        } else if (!userCheck && !passCheck) {
+            setLogin(false)
         }
     }, [userCheck, passCheck])
 
-    if (login === false) {
+    if (login === true) {
         return (
             <LoginPage />
         )
