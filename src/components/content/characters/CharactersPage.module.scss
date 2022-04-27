@@ -7,6 +7,7 @@
 .characters {
     min-height: 100vh;
     display: grid;
+    margin-bottom: 250px;
 }
 
 .characters__header {
@@ -37,4 +38,12 @@
 .header__options {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+    .characters__header {
+        h1 {
+            margin: 10px 10px 0px 10px;
+        }
+    }
 }

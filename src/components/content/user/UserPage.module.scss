@@ -188,77 +188,68 @@
 }
 
 @media screen and (max-width: 639px) and (min-width: 360px) {
-    .user__header {
-        margin-top: 50px;
-    }
-    
     .user__form {
-        margin-top: 50px;
+        max-width: 500px;
         min-width: 360px;
-        height: 400px;
-        background-color: #282c34;
-        border-radius: 15px;
+        height: 500px;
     
-        h2 {
-            font-size: 20px;
-            padding: 10px;
+        form {
+            margin-bottom: 25px;
         }
     }
     
+    .avatarBlock {
+        max-width: 250px;
+        align-items: center;
+        text-align: center;
+    }
+    
     .avatarInput {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        position: relative;
+        align-self: center;
     
         img {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
         }
     
         .circle {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
         }
+    
     }
-
     .accountBlock {
     
         h3 {
-            font-size: 15px;
+            font-size: 20px;
         }
     }
-
-    .buttonBlock {
-        display: flex;
-    }
     
-    .accountBlock__button {
-        width: 100px;
-    }
 }
 
 @media screen and (max-width: 359px) {
-    .user__header {
-        margin-top: 30px;
-    }
-    
     .user__form {
-        margin-top: 50px;
-        min-width: 150px;
-        height: 200px;
-        background-color: #282c34;
-        border-radius: 15px;
+        min-width: 250px;
+        height: 500px;
     
         h2 {
             font-size: 20px;
             padding: 10px;
         }
     }
+
+    .account {
+        display: grid;
+    }
     
     .avatarInput {
         margin-bottom: 10px;
     
         img {
-            width: 80px;
-            height: 80px;
+            width: 150px;
+            height: 150px;
         }
     
         .circle {
@@ -268,8 +259,9 @@
     }
 
     .avatarButton {
-        width: 50px;
-        font-size: 12px;
+        width: 100px;
+        height: 50px;
+        font-size: 15px;
     }
 
     .accountBlock {

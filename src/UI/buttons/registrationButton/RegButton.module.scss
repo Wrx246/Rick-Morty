@@ -15,3 +15,10 @@
         background-color: #cca106;
     }
 }
+
+@media screen and (max-width: 400px) {
+    .RegButton {
+        width: 250px;
+        margin-left: 9%;
+    }
+}

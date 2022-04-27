@@ -74,3 +74,38 @@
         color: #8d7716;
     }
 }
+
+
+@media screen and (max-width: 400px) {
+    .login__form {
+        width: 300px;
+        height: 400px;
+    
+        h2 {
+            font-size: 20px;
+        }
+    }
+    
+    .form__body {
+        font-size: 20px;
+    }
+    
+    .form__input {
+        height: 40px;
+        width: 250px;
+    }
+    
+    .login__link {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        &:hover {
+            color: #e1bf1f;
+            transition: .3s;
+        }
+        &:active {
+            color: #8d7716;
+        }
+    }
+}

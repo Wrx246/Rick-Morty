@@ -7,3 +7,14 @@
         margin: 20px 20px 0px 20px;
     }
 }
+
+@media screen and (max-width: 400px) {
+    .myHeader__header {
+        margin-top: 100px;
+        h1 {
+            color: white;
+            font-size: 60px;
+            text-align: center;
+        }
+    }
+}
