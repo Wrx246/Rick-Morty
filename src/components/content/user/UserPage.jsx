@@ -10,12 +10,13 @@ const UserPage = () => {
     const dispatch = useDispatch();
     const [url, setUrl] = useState('https://i.imgur.com/ndu6pfe.png');
     const [onEdit, setOnEdit] = useState(false);
-    const [ editValue, setEditValue ] = useState('');
+    const [editValue, setEditValue] = useState('');
     const navigate = useNavigate();
 
     const UserStorage = JSON.parse(localStorage.getItem('Username'));
     const EmailStorage = JSON.parse(localStorage.getItem('Email'));
-    
+    const PassStorage = JSON.parse(localStorage.getItem('Password'));
+
 
     const handleFiles = (files) => {
         setUrl(files.base64)
@@ -28,7 +29,7 @@ const UserPage = () => {
         navigate(path);
         dispatch(contentActions.setIsLogin(false))
     }
-    
+
     const onHandlePassword = (e) => {
         e.preventDefault();
         setOnEdit(true);
@@ -36,12 +37,17 @@ const UserPage = () => {
 
     const onHandleSave = (e) => {
         e.preventDefault();
-        localStorage.setItem('Password', JSON.stringify(editValue));
-        setOnEdit(false);
-        setEditValue('');
+        if (!editValue) {
+            alert("Enter password!")
+        } else if (editValue) {
+            localStorage.setItem('Password', JSON.stringify(editValue));
+            setOnEdit(false);
+            setEditValue('');
+        }
+
     }
 
-    if(onEdit) {
+    if (onEdit) {
         return (
             <div className={st.user}>
                 <div className={st.user__header}>
@@ -64,10 +70,11 @@ const UserPage = () => {
                                 <h3>Username: {UserStorage}</h3>
                                 <h3>Email: {EmailStorage}</h3>
                                 <div className={st.buttonBlock}>
-                                <button type="button" onClick={onHandleSave} className={st.accountBlock__button}>Save password</button>
-                                <button type="button" onClick={onHandleLogout} className={st.accountBlock__button}>Logout</button>
-                                
+                                    <button type="button" onClick={onHandleSave} className={st.accountBlock__button}>Save password</button>
+                                    <button type="button" onClick={onHandleLogout} className={st.accountBlock__button}>Logout</button>
+
                                 </div>
+                                <h3>Old password: {PassStorage}</h3>
                                 <input
                                     id='changepassword'
                                     className={st.accountBlock__input}
@@ -106,8 +113,8 @@ const UserPage = () => {
                             <h3>Username: {UserStorage}</h3>
                             <h3>Email: {EmailStorage}</h3>
                             <div className={st.buttonBlock}>
-                            <button type="button" onClick={onHandlePassword} className={st.accountBlock__button}>Change password</button>
-                            <button type="button" onClick={onHandleLogout} className={st.accountBlock__button}>Logout</button>
+                                <button type="button" onClick={onHandlePassword} className={st.accountBlock__button}>Change password</button>
+                                <button type="button" onClick={onHandleLogout} className={st.accountBlock__button}>Logout</button>
                             </div>
                         </div>
                     </div>
