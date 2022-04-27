@@ -139,6 +139,24 @@
     }
 }
 
+.accountBlock__input {
+    margin-left: 10px;
+    border: none;
+    height: 40px;
+    width: 300px;
+    background-color: #7c7c7c;
+    color: black;
+    font-size: 20px;
+    font-family: monospace;
+    outline:none;
+    padding-left: 5px;
+    &:focus {
+        background-color: #ffffff;
+        outline: none;
+        color: #282c34;
+    }
+}
+
 @media screen and (max-width: 1023px) and (min-width: 640px) {
     .user__header {
         margin-top: 50px;
@@ -277,6 +295,11 @@
     
     .accountBlock__button {
         width: 80px;
+        font-size: 15px;
+    }
+
+    .accountBlock__input {
+        width: 180px;
         font-size: 15px;
     }
 }

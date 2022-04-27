@@ -19,13 +19,19 @@ const LoginPage = () => {
     const setLogin = () => {
         if (!confirmUser || !confirmPass) {
             setConfirmLogin(false)
-        } else if (confirmUser !== UserStorage && confirmPass !== PassStorage) {
+            alert("Enter Login and Password")
+        } else if (confirmUser !== UserStorage) {
             setConfirmLogin(false)
-        } else {
+            alert("Wrong Login!")
+        } else if (confirmPass !== PassStorage) {
+            setConfirmLogin(false)
+            alert("Wrong Password")
+        } else if (confirmUser === UserStorage && confirmPass === PassStorage) {
             setConfirmLogin(true);
             localStorage.setItem('ConfirmedLogin', JSON.stringify(true))
+            dispatch(contentActions.setIsLogin(true))
         }
-        dispatch(contentActions.setIsLogin(true))
+        
     }
 
     if (confirmLogin === true) {
