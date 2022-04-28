@@ -34,3 +34,27 @@
 .card__link {
     text-decoration: none;
 }
+
+.preloader__wrapper {
+    background-color: #282c34;
+    width: 250px;
+    min-height: 350px;
+    border-radius: 5%;
+    transition: all 0.3s;
+    
+    &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+        min-height: 250px;
+        padding: 15px;
+    }
+}
+
+.preloader__body {
+    margin: 35px 0px;
+}

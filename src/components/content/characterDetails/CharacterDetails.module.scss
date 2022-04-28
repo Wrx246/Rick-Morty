@@ -5,6 +5,12 @@
     display: grid;
 }
 
+.preloader__body {
+    width: 70%;
+    height: auto;
+    padding: 20px;
+}
+
 
 .details__body {
     display: flex;
@@ -100,6 +106,7 @@
         margin-top: 100px;
         max-width: 360px;
         max-height: 1000px;
+
         img {
             width: 100%;
             height: auto;

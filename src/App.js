@@ -1,18 +1,22 @@
-import './App.scss';
+import st from './App.scss';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
-import ContentPage from './components/content/ContentPage'
-import CharactersPage from './components/content/characters/CharactersPage'
-import LoginPage from './components/content/login/LoginPage'
-import AboutPage from './components/content/about/AboutPage'
-import CharacterDetails from './components/content/characterDetails/CharacterDetails';
-import RegistrationPage from './components/content/registration/RegistrationPage';
-import UserPage from './components/content/user/UserPage';
+import { lazy, Suspense } from 'react';
+import Preloader from './UI/preloader/Preloader';
+
+const ContentPage = lazy(() => import('./components/content/ContentPage'))
+const CharactersPage = lazy(() => import('./components/content/characters/CharactersPage'))
+const LoginPage = lazy(() => import('./components/content/login/LoginPage'))
+const RegistrationPage = lazy(() => import('./components/content/registration/RegistrationPage'))
+const UserPage = lazy(() => import('./components/content/user/UserPage'))
+const AboutPage = lazy(() => import('./components/content/about/AboutPage'))
+const CharacterDetails = lazy(() => import('./components/content/characterDetails/CharacterDetails'))
 
 const App = () => {
   return (
     <>
       <Header />
+      <Suspense fallback={<div className={st.preloader}><Preloader /></div>}>
       <Routes>
         <Route exact path='/' element={<ContentPage />} />
         <Route path='/characters' element={<CharactersPage />} />
@@ -22,6 +26,7 @@ const App = () => {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/:id' element={<CharacterDetails />} />
       </Routes>
+      </Suspense>
     </>
   );
 }

@@ -4,3 +4,4 @@ export const getDetailsCharacterSelector = (state) => state.charactersReducer.de
 export const getFavoriteCharacterSelector = (state) => state.charactersReducer.favorite
 export const getIsLoginSelector = (state) => state.authReducer.isLogin
 export const getIsRegistratedSelector = (state) => state.authReducer.isRegistrated
+export const getIsFetchingSelector = (state) => state.charactersReducer.isFetching

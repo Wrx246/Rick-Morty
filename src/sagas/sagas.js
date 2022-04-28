@@ -8,6 +8,7 @@ function* getAllCharactersWorker() {
         const response = yield call(getAllCharacters);
         yield put(contentActions.getCharactersListSuccess(response.data.results))
     } catch (e) {
+        yield put(contentActions.getCharactersListFailed())
         yield console.log(e)
     }
 }
@@ -30,6 +31,7 @@ function* getDetailsCharacterWorker(action) {
         const response = yield call(getCharacterDetails, id)
         yield put(contentActions.getDetailsCharacterSuccess(response.data))
     } catch (e) {
+        yield put(contentActions.getDetailsCharacterFailed())
         yield console.log(e)
     }
 }

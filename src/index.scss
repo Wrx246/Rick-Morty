@@ -12,7 +12,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #5c5b5b;
+  background: url(./assets/images/home.png) no-repeat center center fixed;
+    background-size: cover;
 }
 
 code {

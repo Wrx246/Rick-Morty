@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDetailsCharacterSelector } from "../../../selectors/charactersSelector";
+import { getDetailsCharacterSelector, getIsFetchingSelector } from "../../../selectors/charactersSelector";
 import * as contentActions from '../../../store/actions/charactersActions';
 import st from './CharacterDetails.module.scss';
+import Preloader from '../../../UI/preloader/Preloader'
+
 
 
 const CharacterDetails = () => {
     const details = useSelector(getDetailsCharacterSelector)
+    const isFetching = useSelector(getIsFetchingSelector)
     const dispatch = useDispatch();
     const { id } = useParams();
 
@@ -33,12 +36,29 @@ const CharacterDetails = () => {
         } else {
             alert('You need login for this!')
         }
-        
     }
 
     useEffect(() => {
         dispatch(contentActions.getDetailsCharacter({ id }))
     }, [])
+
+    if(isFetching === true) {
+        return (
+            <div className={st.details}>
+                <div className={st.details__body}>
+                    <div className={st.details__title}>
+                        <h2>Name: Unknown</h2>
+                        <h3>Status: Unknown</h3>
+                        <h3>Species: Unknown</h3>
+                        <h3>Gender: Unknown</h3>
+                        <button onClick={handleClick} type="button" className={st.details__button}>Add to favorite</button>
+                        <button onClick={handleRemove} type="button" className={st.details__button}>Remove from favorite</button>
+                    </div>
+                    <div className={st.preloader__body}> <Preloader /> </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className={st.details}>
